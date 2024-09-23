@@ -344,13 +344,16 @@ main {
 }
 
 .bottom-sheet-content {
-  padding: 20px;
+  padding: 16px 48px;
+
+  & .bottom-sheet-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  & hr {
+    margin: 8px 0;
+  }
 }
 
-.close-btn {
-  background: none;
-  border: none;
-  font-size: 24px;
-  float: right;
-  cursor: pointer;
-}

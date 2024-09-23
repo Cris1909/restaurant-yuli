@@ -60,14 +60,19 @@
       </div>
     </main>
     <!-- Bottom Sheet Backdrop -->
-    <div class="bottom-sheet-backdrop" id="bottom-sheet-backdrop"></div>
+    <div class="bottom-sheet-backdrop open" id="bottom-sheet-backdrop"></div>
 
     <!-- Bottom Sheet -->
-    <div class="bottom-sheet" id="bottom-sheet">
+    <div class="bottom-sheet open" id="bottom-sheet">
       <div class="bottom-sheet-content">
-        <button class="close-btn" id="close-bottom-sheet">&times;</button>
-        <h2>Detalles de la Orden</h2>
-        <p>Aquí van los detalles de la orden...</p>
+        <div class="bottom-sheet-head">
+          <h2 class="title">Resumen del pedido</h2>
+          <button class="close-btn" id="close-bottom-sheet">
+            <iconify-icon icon="mdi:close"></iconify-icon>
+          </button>
+        </div>
+
+        <hr />
       </div>
     </div>
 
