@@ -10,6 +10,8 @@ body {
 
   --round: 8px;
 
+  --round-2: 16px;
+
   font-family: "Montserrat", sans-serif;
   font-optical-sizing: auto;
   font-style: normal;
@@ -96,8 +98,10 @@ app-sidebar {
   padding: 16px;
   background-color: var(--white);
   display: flex;
+  position: fixed;
   flex-direction: column;
   box-shadow: 8px 0 16px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
 
   & .top-menu {
     display: flex;
@@ -114,6 +118,8 @@ app-sidebar {
     & img {
       width: 100px;
       height: 100px;
+
+      transition: all 0.3s ease;
     }
   }
 
@@ -125,12 +131,12 @@ app-sidebar {
     gap: 2px;
 
     & li {
-      padding: 8px;
       font-size: 16px;
       border-radius: var(--round);
       transition: background-color 0.3s ease;
 
       & a {
+        padding: 8px;
         display: flex;
         align-items: center;
         gap: 8px;
@@ -143,6 +149,81 @@ app-sidebar {
       background-color: var(--light);
     }
   }
+
+  & .logout-icon {
+    display: none;
+  }
+}
+
+body.sb-expanded {
+  & .sidebar {
+    width: 72px;
+
+    & > .top-menu {
+      justify-content: center;
+
+      & > button:first-child {
+        display: none;
+      }
+    }
+
+    & .info-menu {
+      & img {
+        width: 40px;
+        height: 40px;
+      }
+
+      & h4 {
+        display: none;
+      }
+
+      & p {
+        display: none;
+      }
+    }
+
+    & .sidebar-menu {
+      padding-top: 32px;
+      gap: 8px;
+
+      & li {
+        background: var(--light);
+      }
+
+      & li:hover {
+        background: var(--black);
+        color: var(--white);
+      }
+
+      & span {
+        display: none;
+      }
+    }
+
+    & .logout-button {
+      padding: 0;
+      display: grid;
+      place-content: center;
+
+      & .logout-icon {
+        display: block;
+        font-size: 20px;
+      }
+
+      & span {
+        display: none;
+      }
+    }
+  }
+
+  & main {
+    margin-left: 72px;
+  }
+}
+
+main {
+  margin-left: 260px;
+  transition: all 0.3s ease;
 }
 
 .breadcrumb {
@@ -216,7 +297,6 @@ app-sidebar {
   z-index: 1;
 }
 
-
 .select-client {
   align-items: center;
   gap: 8px;
@@ -226,4 +306,51 @@ app-sidebar {
 
 .select-client:focus {
   outline: none;
+}
+
+/* styles.css */
+.bottom-sheet-backdrop {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.25);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease-in-out;
+  z-index: 999;
+}
+
+.bottom-sheet-backdrop.open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.bottom-sheet {
+  position: fixed;
+  bottom: -100%;
+  left: 0;
+  width: 100%;
+  border-radius: var(--round) var(--round) 0 0;
+  background-color: white;
+  box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.1);
+  transition: bottom 0.3s ease-in-out;
+  z-index: 1000;
+}
+
+.bottom-sheet.open {
+  bottom: 0;
+}
+
+.bottom-sheet-content {
+  padding: 20px;
+}
+
+.close-btn {
+  background: none;
+  border: none;
+  font-size: 24px;
+  float: right;
+  cursor: pointer;
 }
