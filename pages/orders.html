@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tomar pedido</title>
+    <link rel="stylesheet" href="../main.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://code.iconify.design/iconify-icon/2.1.0/iconify-icon.min.js"></script>
+
+    <script src="../components/sidebar/sidebar.component.js"></script>
+  </head>
+  <body>
+    <app-sidebar></app-sidebar>
+    <main>
+      <div class="main-container">
+        <h1 class="title">Tomar pedido</h1>
+
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item">
+            <a href="/">Dashboard</a>
+          </li>
+          <li class="breadcrumb-item">Tomar Pedido</li>
+        </ol>
+
+        <div class="order-bar-container">
+          <div class="search-bar">
+            <input type="text" placeholder="Busca un producto..." />
+            <button class="search-button">
+              <iconify-icon
+                icon="mdi:search"
+                class="search-icon"
+              ></iconify-icon>
+            </button>
+          </div>
+
+          <div>
+            <label for="client-type">Tipo de cliente:</label>
+            <select class="select-client" name="client-type" id="client-type">
+              <option value="1">Pasajero</option>
+              <option value="2">Taxista</option>
+              <option value="3">Trabajador</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- <div style="height: 100px; background: lightblue; margin: 16px 0"></div>
+        <div style="height: 100px; background: lightblue; margin: 16px 0"></div>
+        <div style="height: 100px; background: lightblue; margin: 16px 0"></div>
+        <div style="height: 100px; background: lightblue; margin: 16px 0"></div>
+        <div style="height: 100px; background: lightblue; margin: 16px 0"></div>
+        <div style="height: 100px; background: lightblue; margin: 16px 0"></div> -->
+      </div>
+
+      <div class="order-detail">
+        <p class="subtitle">Total a pagar: <b> $30.000 </b></p>
+        <button class="btn btn-primary">Ver orden</button>
+      </div>
+    </main>
+  </body>
+</html>

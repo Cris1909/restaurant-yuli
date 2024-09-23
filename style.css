@@ -1,10 +1,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
 
 body {
-  --light: #F2F2F2;
+  --light: #f2f2f2;
   --white: #f9fafb;
   --gray: #999999;
   --black: #2b2b2b;
+  --primary: #fcc300;
+  --blue-link: #1b76cf;
 
   --round: 8px;
 
@@ -16,6 +18,19 @@ body {
 
   min-height: 100dvh;
   display: flex;
+  position: relative;
+}
+
+main {
+  flex: 1;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+}
+
+.main-container {
+  flex: 1;
+  padding: 16px;
 }
 
 iconify-icon {
@@ -39,12 +54,12 @@ iconify-icon {
 
 .btn {
   text-align: center;
-  width: 100%;
-  height: 48px;
+  height: 40px;
   border-radius: var(--round);
   font-weight: 600;
   font-size: 16px;
   transition: all 0.3s ease;
+  padding: 0 16px;
 }
 
 .btn:hover {
@@ -56,6 +71,11 @@ iconify-icon {
   color: white;
 }
 
+.btn.btn-primary {
+  background: var(--primary);
+  color: var(--black);
+}
+
 .settings-button {
   transition: transform 0.3s ease;
 }
@@ -63,12 +83,21 @@ iconify-icon {
   transform: rotate(180deg);
 }
 
+app-sidebar {
+  position: sticky;
+  height: 100dvh;
+  top: 0;
+  z-index: 2;
+}
+
 .sidebar {
   width: 260px;
+  min-height: 100dvh;
   padding: 16px;
   background-color: var(--white);
   display: flex;
   flex-direction: column;
+  box-shadow: 8px 0 16px rgba(0, 0, 0, 0.1);
 
   & .top-menu {
     display: flex;
@@ -87,13 +116,12 @@ iconify-icon {
       height: 120px;
     }
   }
-  
+
   & .sidebar-menu {
-    
     flex: 1;
     display: flex;
     flex-direction: column;
-    padding-top: 16px;
+    padding-top: 8px;
     gap: 2px;
 
     & li {
@@ -114,7 +142,88 @@ iconify-icon {
     & li:hover {
       background-color: var(--light);
     }
-
   }
-  
-} 
+}
+
+.breadcrumb {
+  display: flex;
+  color: var(--gray);
+  font-size: 16px;
+
+  & .breadcrumb-item:not(:last-child) {
+    color: var(--blue-link);
+  }
+
+  & .breadcrumb-item:not(:last-child):hover {
+    text-decoration: underline;
+  }
+
+  & .breadcrumb-item + .breadcrumb-item::before {
+    content: "/";
+    margin: 0 8px;
+  }
+}
+
+.order-bar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 0;
+}
+
+.search-bar {
+  display: flex;
+  align-items: center;
+  border-radius: var(--round);
+  background-color: var(--light);
+  width: 400px;
+}
+
+.search-bar input {
+  border: none;
+  outline: none;
+  flex-grow: 1;
+  font-size: 16px;
+  color: var(--gray);
+  background-color: transparent;
+  height: 40px;
+  padding: 0 16px;
+}
+
+.search-bar input::placeholder {
+  color: var(--gray);
+}
+
+.search-bar .search-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--gray);
+  padding: 0 8px;
+
+  display: grid;
+  place-content: center;
+}
+
+.order-detail {
+  display: flex;
+  justify-content: space-between;
+  position: sticky;
+  bottom: 0;
+  background-color: var(--white);
+  padding: 16px 32px;
+  box-shadow: 0px -8px 16px rgba(0, 0, 0, 0.1);
+  z-index: 1;
+}
+
+
+.select-client {
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.select-client:focus {
+  outline: none;
+}
