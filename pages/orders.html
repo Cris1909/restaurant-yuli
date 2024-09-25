@@ -10,6 +10,7 @@
 
     <script src="../components/sidebar/sidebar.component.js"></script>
   </head>
+
   <body>
     <app-sidebar></app-sidebar>
     <main>
@@ -44,12 +45,76 @@
           </div>
         </div>
 
-        <section>
+        <section class="order-menu-container">
           <div class="card-menu-meals">
             <img src="/public/images/bandeja paisa.jpg" alt="" />
             <div class="content-card">
               <h3>Bandeja Paisa</h3>
-              <p class="line-2">Bandeja paisa Antioqueña</p>
+              <p class="line-2">
+                Bandeja paisa con todos sus ingredientes: Frijoles, Arroz, Carne
+                Molida, Chicharron, Aguacate, Huevo frito, Longaniza, Tajadas de
+                maduro y Arepa
+              </p>
+              <div class="price-add-container">
+                <span>$15.000</span>
+                <button class="btn btn-primary" id="">Agregar</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="card-menu-meals">
+            <img src="/public/images/arroz-pollo.jpg" alt="" />
+            <div class="content-card">
+              <h3>Arroz con pollo</h3>
+              <p class="line-2">
+                Delicioso arroz con pollo con papa criolla frita
+              </p>
+              <div class="price-add-container">
+                <span>$15.000</span>
+                <button class="btn btn-primary" id="">Agregar</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="card-menu-meals">
+            <img src="/public/images/lengua-guisada.jpg" alt="" />
+            <div class="content-card">
+              <h3>Lengua Guisada</h3>
+              <p class="line-2">
+                Delicioso plato corriente de lengua guisada, con principio del
+                día, arroz, tajadas de maduro y ensalada
+              </p>
+              <div class="price-add-container">
+                <span>$13.000</span>
+                <button class="btn btn-primary" id="">Agregar</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="card-menu-meals">
+            <img src="/public/images/carne-plancha.jpg" alt="" />
+            <div class="content-card">
+              <h3>Carne a la plancha</h3>
+              <p class="line-2">
+                Almuerzo corriente con Carne a la plancha que contiene: Arroz,
+                principio del día, tajadas de maduro y ensalada
+              </p>
+              <div class="price-add-container">
+                <span>$12.000</span>
+                <button class="btn btn-primary" id="">Agregar</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="card-menu-meals">
+            <img src="/public/images/arroz-mixto.jpg" alt="" />
+            <div class="content-card">
+              <h3>Arroz Mixto</h3>
+              <p class="line-2">
+                Arroz mixto de 5 tipos de carnes: Carne de res, carne de cerdo,
+                chuleta ahumada, pechuga y camarones, verduras, raices chinas y
+                acompañado con papas a la francesa
+              </p>
               <div class="price-add-container">
                 <span>$15.000</span>
                 <button class="btn btn-primary" id="">Agregar</button>
@@ -58,19 +123,16 @@
           </div>
         </section>
       </div>
-
       <div class="order-detail">
         <p class="subtitle">Total a pagar: <b> $30.000 </b></p>
-        <button class="btn btn-primary" id="open-bottom-sheet">
-          Ver orden
-        </button>
+        <button class="btn btn-primary" id="open-bottom-sheet">Ver orden</button>
       </div>
     </main>
     <!-- Bottom Sheet Backdrop -->
-    <div class="bottom-sheet-backdrop open" id="bottom-sheet-backdrop"></div>
+    <div class="bottom-sheet-backdrop" id="bottom-sheet-backdrop"></div>
 
     <!-- Bottom Sheet -->
-    <div class="bottom-sheet open" id="bottom-sheet">
+    <div class="bottom-sheet" id="bottom-sheet">
       <div class="bottom-sheet-content">
         <div class="bottom-sheet-head">
           <h2 class="title">Resumen del pedido</h2>
@@ -122,6 +184,7 @@
         </div>
       </div>
     </div>
+    
 
     <script src="../scripts/bottom-sheet.js"></script>
   </body>

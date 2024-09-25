@@ -76,9 +76,8 @@
     border-left: var(--black) solid 1px;
     font-weight: 600;
     padding: 0 8px;
+    margin: 8px 0;
     font-size: 18px;
-    text-align: center;
-    line-height: 45px;
   }
 
   & .name {
