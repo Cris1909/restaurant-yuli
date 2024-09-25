@@ -71,8 +71,58 @@
             <iconify-icon icon="mdi:close"></iconify-icon>
           </button>
         </div>
-
         <hr />
+        <div id="contenedor">
+          <div class="title-bar-resume">
+            <iconify-icon icon="mdi:image-outline"></iconify-icon>
+            <span class="name">Nombre</span>
+            <span class="price">Precio</span>
+            <span class="quantity">Cantidad</span>
+            <span class="subtotal">Subtotal</span>
+          </div>
+          <div class="info_delivery">
+            <img class="image-food" src="" alt="" />
+            <span class="name">Brocoli Beaf</span>
+            <span class="price">$ 15.000</span>
+            <span class="quantity">
+              <button class="quantity_left" id="decrease">-</button>
+              <input type="number" id="quantity" value="1" min="1" readonly />
+              <button class="quantity_right" id="increase">+</button>
+            </span>
+            <span class="total_spend">$ 30.000</span>
+          </div>
+          <script>
+            const quantityInput = document.getElementById("quantity");
+            const decreaseButton = document.getElementById("decrease");
+            const increaseButton = document.getElementById("increase");
+
+            decreaseButton.addEventListener("click", () => {
+              let currentValue = parseInt(quantityInput.value);
+              if (currentValue > 1) {
+                quantityInput.value = currentValue - 1;
+              }
+            });
+
+            increaseButton.addEventListener("click", () => {
+              let currentValue = parseInt(quantityInput.value);
+              quantityInput.value = currentValue + 1;
+            });
+          </script>
+          <hr class="separator_1" />
+          <div class="total_delivery">
+            <iconify-icon icon="mdi:user"></iconify-icon>
+            <span class="delivery_text"
+              >Tipo de Cliente: <span class="type_client">Pasajero</span>
+            </span>
+            <span class="delivery_total_spend">Total a pagar</span>
+            <span class="delivery_spend">$ 30.000</span>
+          </div>
+        </div>
+        <hr class="separator_2" />
+        <div class="footer_order">
+          <span class="text_footer">Total a pagar: <span class="price">$ 30.000</span></span>
+          <button class="OK">Confirmar orden</button>
+        </div>
       </div>
     </div>
 
