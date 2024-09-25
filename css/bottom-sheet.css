@@ -33,7 +33,7 @@
 }
 
 .bottom-sheet-content {
-  padding: 16px 48px;
+  padding: 48px 48px 16px 48px;
 
   & .bottom-sheet-head {
     display: flex;
@@ -41,22 +41,22 @@
     align-items: center;
   }
 
-  & hr {
-    margin: 8px 0;
-  }
 }
 
-.bottom-sheet-body {
+.order-table {
   display: grid;
-  padding-top: 8px;
 
   grid-template-areas:
     "title-bar"
     "info-order"
-    "hr"
     "total-order";
+
   grid-template-columns: repeat(0, minmax(0fr));
-  height: 155px;
+
+  box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.1);
+  border-radius: var(--round);
+
+  margin: 16px 0;
 }
 
 .title-bar-resume {
@@ -109,13 +109,21 @@
   display: flex;
   height: 45px;
 
+  & img {
+    width: 32px;
+    height: 32px;
+    object-fit: cover;
+    border-radius: var(--round);
+    margin: 8px;
+  }
+
   & .name {
     flex: 1;
     text-align: start;
   }
 
   & span {
-    border-left: #c2c2cc solid 1px;
+    border-left: #cccccc solid 1px;
     font-weight: 600;
     padding: 0 8px;
     font-size: 18px;
@@ -144,13 +152,18 @@
 .total-delivery {
   grid-area: total-order;
   display: flex;
-  height: 45px;
+  border-top: #cccccc solid 1px;
 
-  & iconify-icon {
-    width: 48px;
+  & .user-icon {
+    width: 32px;
+    height: 32px;
+    margin: 8px;
     display: grid;
     place-content: center;
+    background: var(--light);  
+    border-radius: var(--round);
   }
+
   & .type-client {
     font-weight: 600;
   }
@@ -162,16 +175,16 @@
   }
   & .delivery-text {
     flex: 1;
-    border-left: #c2c2cc solid 1px;
+    border-left: #cccccc solid 1px;
     text-align: justify;
   }
   & .delivery-total-spend {
     width: 136px;
-    border-left: #c2c2cc solid 1px;
+    border-left: #cccccc solid 1px;
   }
   & .delivery-spend {
     width: 160px;
-    border-left: #c2c2cc solid 1px;
+    border-left: #cccccc solid 1px;
   }
 }
 
@@ -223,25 +236,4 @@
     border-bottom-right-radius: var(--round);
     place-content: center;
   }
-
-  /* & .quantity-right {
-    background-color: var(--primary);
-    border-top-right-radius: 4px;
-    border-bottom-right-radius: 4px;
-    width: 24px;
-    height: 24px;
-    font-size: 18px;
-    cursor: pointer;
-  }
-
-  & .quantity-left {
-    align-items: center;
-    background-color: var(--primary);
-    border-top-left-radius: 4px;
-    border-bottom-left-radius: 4px;
-    width: 24px;
-    height: 24px;
-    font-size: 18px;
-    cursor: pointer;
-  } */
 }
