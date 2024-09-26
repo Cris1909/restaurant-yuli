@@ -211,7 +211,6 @@
   & span {
     width: 48px;
     height: 32px;
-    border: none;
     background: var(--light);
     display: grid;
     place-content: center;
