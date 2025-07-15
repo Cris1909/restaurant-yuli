@@ -2,3 +2,42 @@
 @import url(css/media.css);
 @import url(css/sidebar.css);
 @import url(css/bottom-sheet.css);
+
+/* .img-container {
+  perspective: 1000px;
+  width: 500px;
+  height: 300px;
+  position: relative;
+
+  & img {
+    height: 300px;
+    width: 250px;
+    position: absolute;
+    transition: all 0.5s ease-in-out;
+    object-fit: cover;
+    z-index: 1;
+  }
+
+  & :first-child {
+    left: 0;
+    object-position: 0;
+  }
+
+  & :last-child {
+    right: 0;
+    object-position: 100%;
+  }
+
+  
+}
+
+.img-container:hover {
+  & :first-child {
+    transform: rotate3d( 0, 1, 0, -45deg );
+  }
+
+  & :last-child {
+    width: 250px;
+    transform: rotate3d( 0, 1, 0, 45deg );
+  }
+} */
